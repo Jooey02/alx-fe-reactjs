@@ -1,15 +1,14 @@
-import Header from './components/Header';
-import MainContent from './components/MainContent';
-import Footer from './components/Footer';
+// src/App.jsx
 
-function App() {
-    return (
-        <div className="App">
-            <Header />
-            <MainContent />
-            <Footer />
-        </div>
-    );
-}
+import React from 'react';
+import UserProfile from './components/UserProfile';
+
+const App = () => {
+  return (
+    <div>
+      <UserProfile name="Alice" age={25} bio="Loves hiking and photography" />
+    </div>
+  );
+};
 
 export default App;
