@@ -1,9 +1,11 @@
-function Footer() {
-    return (
-        <footer style={{ backgroundColor: '#333', color: 'white', textAlign: 'center', padding: '10px', position: 'fixed', bottom: '0', width: '100%' }}>
-            <p style={{ margin: '0' }}>© 2023 City Lovers</p>
-        </footer>
-    );
-}
+import React from 'react';
+
+const Footer = () => {
+  return (
+    <footer style={{ backgroundColor: 'darkgray', color: 'white', textAlign: 'center', padding: '10px' }}>
+      <p>&copy; 2024 My Favorite Cities</p>
+    </footer>
+  );
+};
 
 export default Footer;
