@@ -1,14 +1,14 @@
 // src/App.jsx
-
 import React from 'react';
-import UserProfile from './components/UserProfile';
+import Counter from './components/Counter'; // Import the Counter component
 
-const App = () => {
+function App() {
   return (
     <div>
-      <UserProfile name="Alice" age={25} bio="Loves hiking and photography" />
+      <h1>Counter Application</h1>
+      <Counter /> {/* Include the Counter component */}
     </div>
   );
-};
+}
 
 export default App;
