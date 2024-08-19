@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfilePage from './ProfilePage'; // Adjust path if necessary
+import UserProfile from './components/UserProfile';
 import UserContext from './UserContext';
 
 function App() {
@@ -7,7 +7,10 @@ function App() {
 
   return (
     <UserContext.Provider value={userData}>
-      <ProfilePage />
+      <div>
+        <h1>My React App</h1>
+        <UserProfile />
+      </div>
     </UserContext.Provider>
   );
 }
