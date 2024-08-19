@@ -1,15 +1,14 @@
-// src/App.jsx
 import React from 'react';
-import UserProfile from './components/UserProfile';
-import { UserProvider } from './components/UserContext';
+import ProfilePage from './ProfilePage'; // Adjust path if necessary
+import UserContext from './UserContext';
 
 function App() {
-  const userData = { name: "Jane Doe", age: 25, bio: "Loves hiking and photography" };
+  const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
 
   return (
-    <UserProvider value={userData}>
-      <UserProfile />
-    </UserProvider>
+    <UserContext.Provider value={userData}>
+      <ProfilePage />
+    </UserContext.Provider>
   );
 }
 
