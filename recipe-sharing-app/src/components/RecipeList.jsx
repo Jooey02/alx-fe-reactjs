@@ -1,38 +1,55 @@
-import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import useRecipeStore from './recipeStore'
-import SearchBar from './SearchBar'
 
-const RecipeList = () => {
-  const { filteredRecipes, filterRecipes } = useRecipeStore(state => ({
-    filteredRecipes: state.filteredRecipes,
-    filterRecipes: state.filterRecipes
+const RecipeDetails = () => {
+  const { id } = useParams()
+  const navigate = useNavigate()
+  const { recipe, deleteRecipe, favorites, addFavorite, removeFavorite } = useRecipeStore(state => ({
+    recipe: state.recipes.find(r => r.id === parseInt(id)),
+    deleteRecipe: state.deleteRecipe,
+    favorites: state.favorites,
+    addFavorite: state.addFavorite,
+    removeFavorite: state.removeFavorite
   }))
 
-  useEffect(() => {
-    filterRecipes()
-  }, [filterRecipes])
+  if (!recipe) return <div>Recipe not found</div>
+
+  const isFavorite = favorites.includes(recipe.id)
+
+  const handleDelete = () => {
+    deleteRecipe(recipe.id)
+    navigate('/')
+  }
+
+  const handleFavorite = () => {
+    if (isFavorite) {
+      removeFavorite(recipe.id)
+    } else {
+      addFavorite(recipe.id)
+    }
+  }
 
   return (
-    <div>
-      <h2 className="text-2xl font-bold mb-4">Recipes</h2>
-      <SearchBar />
-      {filteredRecipes.length === 0 ? (
-        <p className="mt-4">No recipes found. Try a different search term.</p>
-      ) : (
-        filteredRecipes.map(recipe => (
-          <div key={recipe.id} className="mt-4 p-4 border border-gray-200 rounded">
-            <h3 className="text-xl font-semibold">
-              <Link to={`/recipe/${recipe.id}`} className="text-blue-500 hover:underline">
-                {recipe.title}
-              </Link>
-            </h3>
-            <p className="mt-2">{recipe.description}</p>
-          </div>
-        ))
-      )}
+    <div className="max-w-2xl mx-auto p-4">
+      <h1 className="text-3xl font-bold mb-4">{recipe.title}</h1>
+      <p className="mb-4">{recipe.description}</p>
+      <div className="flex space-x-4">
+        <button 
+          onClick={handleFavorite}
+          className={`px-4 py-2 rounded ${isFavorite ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'} text-white`}
+        >
+          {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
+        </button>
+        <button 
+          onClick={handleDelete}
+          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+        >
+          Delete Recipe
+        </button>
+      </div>
     </div>
   )
 }
 
-export default RecipeList
+export default RecipeDetails
