@@ -1,9 +1,11 @@
 // components/Login.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
-const Login = ({ login }) => {
+const Login = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleLogin = () => {
     login();
