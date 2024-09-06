@@ -1,4 +1,4 @@
-// src/components/TodoList.js
+// src/components/TodoList.jsx
 import React, { useState } from 'react';
 import AddTodoForm from './AddTodoForm';
 
