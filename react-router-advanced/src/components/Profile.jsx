@@ -1,6 +1,8 @@
 // components/Profile.jsx
 import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, Routes, Route } from 'react-router-dom';
+import ProfileDetails from './ProfileDetails';
+import ProfileSettings from './ProfileSettings';
 
 const Profile = () => (
   <div>
@@ -8,6 +10,10 @@ const Profile = () => (
     <nav>
       <Link to="">Details</Link> | <Link to="settings">Settings</Link>
     </nav>
+    <Routes>
+      <Route index element={<ProfileDetails />} />
+      <Route path="settings" element={<ProfileSettings />} />
+    </Routes>
     <Outlet />
   </div>
 );
