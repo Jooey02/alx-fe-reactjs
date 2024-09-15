@@ -1,11 +1,12 @@
+import React from 'react';
+import UserProfile from './components/UserProfile';
+
 function App() {
   return (
-    <div className="p-4 bg-blue-100">
-      <h1 className="text-2xl font-bold text-blue-600">
-        Hello, Tailwind CSS!
-      </h1>
+    <div className="App">
+      <UserProfile />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
