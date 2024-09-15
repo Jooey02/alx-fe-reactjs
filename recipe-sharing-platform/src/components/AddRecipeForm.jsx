@@ -24,7 +24,7 @@ function AddRecipeForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+    <form onSubmit={handleSubmit} className="max-w-md mx-auto shadow-md rounded-lg p-6">
       <div className="mb-4">
         <label htmlFor="title" className="block text-gray-700 font-bold mb-2">
           Recipe Title
