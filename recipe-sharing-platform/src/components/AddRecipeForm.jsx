@@ -3,17 +3,17 @@ import React, { useState } from 'react';
 function AddRecipeForm() {
   const [title, setTitle] = useState('');
   const [ingredients, setIngredients] = useState('');
-  const [preparationSteps, setPreparationSteps] = useState('');
+  const [steps, setSteps] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!title || !ingredients || !preparationSteps) {
+    if (!title || !ingredients || !steps) {
       alert('Please fill in all fields.');
       return;
     }
 
-    // Submit the form data to your backend API
+    // Submit the form data to your backend API, including the `steps` field
   };
 
   return (
@@ -44,13 +44,13 @@ function AddRecipeForm() {
         />
       </div>
       <div className="mb-4">
-        <label htmlFor="preparationSteps" className="block text-gray-700 font-bold mb-2">
+        <label htmlFor="steps" className="block text-gray-700 font-bold mb-2">
           Preparation Steps
         </label>
         <textarea
-          id="preparationSteps"
-          value={preparationSteps}
-          onChange={(e) => setPreparationSteps(e.target.value)}
+          id="steps"
+          value={steps}
+          onChange={(e) => setSteps(e.target.value)}
           className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
           required
         />
