@@ -1,56 +1,30 @@
-[
-    {
-      "id": 1,
-      "title": "Spaghetti Carbonara",
-      "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-      "image": "https://via.placeholder.com/300x200",
-      "ingredients": [
-        "400g spaghetti",
-        "200g pancetta or guanciale, diced",
-        "4 large eggs",
-        "100g Pecorino Romano cheese, grated",
-        "100g Parmesan cheese, grated",
-        "Freshly ground black pepper",
-        "Salt"
-      ],
-      "instructions": [
-        "Bring a large pot of salted water to boil and cook spaghetti according to package instructions.",
-        "In a large pan, cook the pancetta until crispy. Remove from heat and set aside.",
-        "In a bowl, whisk together eggs, grated cheeses, and black pepper.",
-        "Drain the pasta, reserving 1 cup of pasta water.",
-        "Quickly add the hot pasta to the pan with pancetta, then pour over the egg and cheese mixture, stirring constantly.",
-        "Add some reserved pasta water if needed to create a creamy sauce.",
-        "Serve immediately with extra grated cheese and black pepper on top."
-      ]
+{
+    "name": "recipe-sharing-platform",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+      "preview": "vite preview"
     },
-    {
-      "id": 2,
-      "title": "Chicken Tikka Masala",
-      "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-      "image": "https://via.placeholder.com/300x200",
-      "ingredients": [
-        "500g boneless chicken, cut into chunks",
-        "1 cup yogurt",
-        "2 tbsp lemon juice",
-        "2 tsp ground cumin",
-        "2 tsp red chili powder",
-        "2 tsp garam masala",
-        "2 tsp ginger paste",
-        "4 tbsp butter",
-        "1 large onion, finely chopped",
-        "3 garlic cloves, minced",
-        "1 can (400g) tomato puree",
-        "1 cup heavy cream",
-        "Fresh cilantro for garnish"
-      ],
-      "instructions": [
-        "Marinate chicken with yogurt, lemon juice, cumin, red chili powder, 1 tsp garam masala, and ginger paste for 2 hours.",
-        "Grill or bake the marinated chicken until cooked through.",
-        "In a large pan, melt butter and sauté onions until golden brown.",
-        "Add garlic and cook for another minute.",
-        "Stir in tomato puree, remaining garam masala, and salt. Simmer for 10 minutes.",
-        "Add grilled chicken and cream. Simmer for another 5 minutes.",
-        "Garnish with fresh cilantro and serve with naan bread or rice."
-      ]
+    "dependencies": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "react-router-dom": "^6.11.2"
+    },
+    "devDependencies": {
+      "@types/react": "^18.0.28",
+      "@types/react-dom": "^18.0.11",
+      "@vitejs/plugin-react": "^4.0.0",
+      "autoprefixer": "^10.4.14",
+      "eslint": "^8.38.0",
+      "eslint-plugin-react": "^7.32.2",
+      "eslint-plugin-react-hooks": "^4.6.0",
+      "eslint-plugin-react-refresh": "^0.3.4",
+      "postcss": "^8.4.23",
+      "tailwindcss": "^3.3.2",
+      "vite": "^4.3.2"
     }
-  ]
+  }
