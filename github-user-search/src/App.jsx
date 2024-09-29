@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css'
+import Search from './components/Search'
 
 function App() {
   return (
@@ -8,8 +9,7 @@ function App() {
         <h1>GitHub User Search</h1>
       </header>
       <main>
-        {/* Search component will go here */}
-        {/* Results component will go here */}
+        <Search />
       </main>
     </div>
   )
